@@ -9,7 +9,7 @@ def getS():
         },
     }
 
-    return  sValues
+    return sValues
 
 
 def getMS():
@@ -20,7 +20,7 @@ def getMS():
             "C": 1
         }
     }
-    return  msValues
+    return msValues
 
 
 def getValueFromUser(data: dict):
