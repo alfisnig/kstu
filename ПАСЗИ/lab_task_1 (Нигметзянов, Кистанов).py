@@ -259,10 +259,10 @@ def calculateEnvScore() -> str:
     tempScoreValues = getTempVectorValues()
     E, RL, RC = getValueFromUser(tempScoreValues)
     envScore = getEnvScore(MAV, MAC, MPR, MUI, MS, MC, MI, MA, CR, IR, AR, E, RL, RC)
-    return  envScore
+    return envScore
 
 
-if __name__ == "__main__":
+def start():
     while True:
         userChoice = input("Выберите что вы хотите сделать:\n\t1 - Вычислить базовую оценку"
                            "\n\t2 - Вычислить временную оценку\n\t3 - Вычислить контекстную оценку"
@@ -277,3 +277,7 @@ if __name__ == "__main__":
             break
         else:
             print("Пункта с таким номером не существует!")
+
+
+if __name__ == "__main__":
+    start()
