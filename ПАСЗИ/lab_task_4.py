@@ -22,4 +22,7 @@ for _ in range(L):
     password += alphabet[random.randint(0, A-1)]
 print(f"Ваш пароль:\n{password}")
 
+calcTime = input("Чтобы расчитать время взлома сгенерированнаого пароля, нажмите enter (введите пустую строку). ")
+if not calcTime:
+    print(f"{(A**L * P) / passwordsPerWeek}")
 input("Нажмите enter, чтобы закрыть консоль.")
