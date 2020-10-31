@@ -18,7 +18,8 @@ while True:
 
 choice = int(choice)
 if choice == 1:
-    mes = open("plain_text.txt", encoding='utf-8').read().strip()
+    with open("plain_text.txt", encoding='utf-8') as f:
+        mes = f.read().strip()
 
     plainMessage = []
 
@@ -31,7 +32,8 @@ if choice == 1:
 
     open("crypted_text.txt", "w", encoding='utf-8').write(" ".join(plainMessage))
 elif choice == 2:
-    mes = open("crypted_text.txt").read().strip()
+    with open("crypted_text.txt", encoding='utf-8') as f:
+        mes = f.read().strip()
 
     decryptedMessage = ""
     for num in mes.split(" "):
@@ -43,5 +45,6 @@ elif choice == 2:
             if num == generatePolynomial(n, letterPos + 1):
                 decryptedMessage += alphabet[letterPos]
 
-    open("decrypted_text.txt", "w", encoding='utf-8').write("".join(decryptedMessage))
+    with open("decrypted_text.txt", "w", encoding='utf-8') as f:
+        f.write("".join(decryptedMessage))
 
